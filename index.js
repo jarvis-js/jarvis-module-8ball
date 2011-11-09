@@ -1,8 +1,8 @@
 module.exports = function(bot) {
 
-	eightBallModule = new bot.Module();
+	var module = new bot.Module();
 
-	eightBallModule.load = function() {
+	module.load = function() {
 		var replies = [
 			'It is certain',
 			'It is decidedly so',
@@ -26,11 +26,11 @@ module.exports = function(bot) {
 			'Very doubtful'
 		];
 
-		bot.registerCommand(this.name, /(eightball|8ball) (.*)/i, function(request) {
+		bot.registerCommand(module.name, /(eightball|8ball) (.*)/i, function(request) {
 				request.reply = replies[Math.floor(Math.random()*replies.length)];
 				bot.respond(request);
 		});
 	};
 
-	return eightBallModule;
+	return module;
 };
