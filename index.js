@@ -26,7 +26,7 @@ module.exports = function(bot) {
 			'Very doubtful'
 		];
 
-		bot.registerCommand(module.name, /(eightball|8ball) (.*)/i, function(request) {
+		module.addCommand(/(eightball|8ball) (.*)/i, function(request) {
 				request.reply = replies[Math.floor(Math.random()*replies.length)];
 				bot.respond(request);
 		});
