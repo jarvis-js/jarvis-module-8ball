@@ -25,7 +25,7 @@ module.exports = function(bot, module) {
 
 	module.addCommand(/(eightball|8ball) (.*)/i, function(request) {
 		request.reply = replies[Math.floor(Math.random()*replies.length)];
-		bot.respond(request);
+		bot.reply(request);
 	});
 
 };
