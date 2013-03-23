@@ -1,4 +1,6 @@
-module.exports = function(bot, module) {
+/*global module*/
+
+module.exports = function(jarvis, module) {
 
 	var replies = [
 		'It is certain',
@@ -11,6 +13,7 @@ module.exports = function(bot, module) {
 		'Outlook good',
 		'Signs point to yes',
 		'Yes',
+		'Hmmmmmmmm',
 		'Reply hazy, try again',
 		'Ask again later',
 		'Better not tell you now',
@@ -23,12 +26,12 @@ module.exports = function(bot, module) {
 		'Very doubtful'
 	];
 
-	module.addCommand({
-		match: /(eightball|8ball) (.*)/i,
-		func: function(request) {
-			request.reply = replies[Math.floor(Math.random()*replies.length)];
-			bot.reply(request);
+	module.addAction(module.createCommand({
+		name: '8ball',
+		match: new RegExp('(eightball|8ball) (.*)', 'i'),
+		func: function(message) {
+			jarvis.reply(message, replies[Math.floor(Math.random()*replies.length)]);
 		}
-	});
+	}));
 
 };

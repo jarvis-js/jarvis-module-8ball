@@ -1,12 +1,11 @@
 {
   "author": "Alex Whitman <alex@alexwhitman.com>",
-  "name": "dobot-module-8ball",
+  "name": "jarvis-module-8ball",
   "description": "Magic 8 ball command",
-  "version": "0.0.0",
-  "homepage": "http://dobot.github.com/",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dobot/dobot-module-8ball.git"
+    "url": "git://github.com/mintbridge/jarvis-module-8ball.git"
   },
   "keywords": ["bot"],
   "engines": {
